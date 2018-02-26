@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>给你们的歌</title>
+    <style type="text/css">
+        body{
+            background-image: url(./images/0.jpg);
+            background-size: 100% 100%;
+            height:100%;
+        }
+        html{
+            height:100%;
+        }
+        @keyframes myfirst {
+            0% {opacity:0}
+            25% {opacity:100}
+            50% {opacity:0}
+            100% {opacity:0}
+        }
+        @keyframes mysecond{
+            0% {opacity:0}
+            50% {opacity:0}
+            75% {opacity:100}
+            100% {opacity:0}
+        }
+        p{
+            font-size:80px;
+            position: absolute;
+            width:100%;
+            text-align: center;
+        }
+        #canghai{
+            animation: myfirst 5:32s infinite;
+        }
+        #taotao{
+            animation: mysecond 5:32s infinite;
+        }
+    </style>
+    <script>
+        function audioAutoPlay(id){
+            var audio = document.getElementById(id);
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+            document.addEventListener('YixinJSBridgeReady', function() {
+                audio.play();
+            }, false);
+        }
+    </script>
+</head>
+<audio src="wav/music-1.mp3" preload="auto" autoplay="autoplay">
+</audio>
 
+<p id="taotao">2018年祝黄林远宝权祥瑞菱旺旺旺</p>
+
+</body>
+</html>
